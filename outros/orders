@@ -1,0 +1,95 @@
+[
+  {
+    "_id": "o1001",
+    "customer_id": "c001",
+    "products": [
+      { "product_id": "p001", "quantity": 1 },
+      { "product_id": "p011", "quantity": 1 }
+    ],
+    "total": 1499.89,
+    "date": "2025-01-12"
+  },
+  {
+    "_id": "o1002",
+    "customer_id": "c002",
+    "products": [
+      { "product_id": "p006", "quantity": 1 }
+    ],
+    "total": 3499.90,
+    "date": "2025-01-14"
+  },
+  {
+    "_id": "o1003",
+    "customer_id": "c003",
+    "products": [
+      { "product_id": "p013", "quantity": 1 }
+    ],
+    "total": 1999.00,
+    "date": "2025-02-03"
+  },
+  {
+    "_id": "o1004",
+    "customer_id": "c005",
+    "products": [
+      { "product_id": "p027", "quantity": 1 }
+    ],
+    "total": 299.00,
+    "date": "2025-02-08"
+  },
+  {
+    "_id": "o1005",
+    "customer_id": "c001",
+    "products": [
+      { "product_id": "p018", "quantity": 1 }
+    ],
+    "total": 199.90,
+    "date": "2025-02-10"
+  },
+  {
+    "_id": "o1006",
+    "customer_id": "c003",
+    "products": [
+      { "product_id": "p020", "quantity": 1 }
+    ],
+    "total": 349.00,
+    "date": "2025-02-12"
+  },
+  {
+    "_id": "o1007",
+    "customer_id": "c004",
+    "products": [
+      { "product_id": "p016", "quantity": 1 },
+      { "product_id": "p017", "quantity": 1 }
+    ],
+    "total": 498.00,
+    "date": "2025-02-18"
+  },
+  {
+    "_id": "o1008",
+    "customer_id": "c002",
+    "products": [
+      { "product_id": "p014", "quantity": 2 }
+    ],
+    "total": 499.80,
+    "date": "2025-02-21"
+  },
+  {
+    "_id": "o1009",
+    "customer_id": "c005",
+    "products": [
+      { "product_id": "p022", "quantity": 1 }
+    ],
+    "total": 499.00,
+    "date": "2025-02-28"
+  },
+  {
+    "_id": "o1010",
+    "customer_id": "c004",
+    "products": [
+      { "product_id": "p015", "quantity": 1 },
+      { "product_id": "p026", "quantity": 1 }
+    ],
+    "total": 828.00,
+    "date": "2025-03-02"
+  }
+]

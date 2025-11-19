@@ -1,0 +1,37 @@
+[
+  {
+    "_id": "c001",
+    "name": "Mariana Silva",
+    "email": "mariana@gmail.com",
+    "loyalty_points": 340,
+    "purchases": ["p001", "p011", "p018"]
+  },
+  {
+    "_id": "c002",
+    "name": "Carlos Santos",
+    "email": "carlos.s@email.com",
+    "loyalty_points": 120,
+    "purchases": ["p006"]
+  },
+  {
+    "_id": "c003",
+    "name": "Ana Paula Gomes",
+    "email": "ana.pg@gmail.com",
+    "loyalty_points": 220,
+    "purchases": ["p013", "p020"]
+  },
+  {
+    "_id": "c004",
+    "name": "João Batista",
+    "email": "joao.batista@hotmail.com",
+    "loyalty_points": 80,
+    "purchases": []
+  },
+  {
+    "_id": "c005",
+    "name": "Fernanda Oliveira",
+    "email": "fernanda.oli@gmail.com",
+    "loyalty_points": 190,
+    "purchases": ["p027"]
+  }
+]
