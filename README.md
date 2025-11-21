@@ -39,15 +39,21 @@ Usuário → Agente IA → Action (OpenAPI) → API (Ngrok) → Resposta
 
 ---
 
+
 ## 📌 3. Desenvolvimento da API
+
+A API foi desenvolvida utilizando o **FastAPI**, framework Python moderno, rápido e eficiente para construir APIs RESTful. O FastAPI facilita a definição de rotas, tratamento de requisições HTTP e a documentação automática dos endpoints via Swagger/OpenAPI.
+
+Após estruturar as rotas principais, foi implementada **a conexão com o MongoDB Atlas**, serviço de banco de dados NoSQL totalmente gerenciado na nuvem. Para integrar o FastAPI ao MongoDB Atlas, foi utilizada a biblioteca `pymongo` (ou `motor` para operações assíncronas). Isso permitiu que produtos, clientes e pedidos fossem consultados diretamente na coleção correspondente do banco de dados online, garantindo escalabilidade e acesso remoto seguro.
 
 A API possui três endpoints principais:
 
-* **GET /products** – retorna lista de produtos
-* **GET /customers** – retorna lista de clientes
-* **GET /orders** – retorna pedidos disponíveis
+* **GET /products** – retorna lista de produtos consultando o MongoDB Atlas
+* **GET /customers** – retorna lista de clientes consultando o MongoDB Atlas
+* **GET /orders** – retorna pedidos disponíveis consultando o MongoDB Atlas
 
-Cada rota retorna um JSON estruturado. Exemplos estão no diretório `/api` do projeto.
+Cada rota retorna um JSON estruturado. Exemplos estão no diretório `/openapi` do projeto.
+
 
 ---
 
@@ -174,21 +180,11 @@ Para mais exemplos do agente, clique [aqui](/assets)
 
 ---
 
-## 9. Próximos Passos (opcionais)
-
-* Adicionar POST /customers e POST /orders
-
-* Criar interface web (React, Next.js ou Streamlit)
-
-* Criar autenticação por token na API
-
-* Versão interna para admin com mais permissões
-
-### 📌 9.1 Melhorias Futuras
+## 9. Melhorias Futuras (opcionais)
 
 Esta seção apresenta ideias de evolução do projeto, visando aumentar robustez, segurança, usabilidade e escalabilidade.
 
-#### 🔒 Segurança e Governança
+### 🔒 Segurança e Governança
 
 * Implementar autenticação JWT na API
 
@@ -198,7 +194,9 @@ Esta seção apresenta ideias de evolução do projeto, visando aumentar robuste
 
 * Configurar rate limits no backend
 
-##### 🚀 Desempenho e Escalabilidade
+* Versão interna para admin com mais permissões
+
+### 🚀 Desempenho e Escalabilidade
 
 * Migrar a API para um ambiente cloud (Azure Web Apps ou Container Apps)
 
@@ -207,15 +205,15 @@ Esta seção apresenta ideias de evolução do projeto, visando aumentar robuste
 * Cache de respostas para consultas repetidas
 
 
-#### 🔧 Evolução do Agente IA
+### 🔧 Evolução do Agente IA
 
 Adicionar contexto avançado via memória
 
-* Criar ações mais complexas, como filtros por categoria, país ou data
+* Criar ações mais complexas, como filtros por categoria
 
 * Criar um módulo de "Insights" para resumos automáticos das informações retornadas
 
-#### 🖥️ Interface e Experiência do Usuário
+### 🖥️ Interface e Experiência do Usuário
 
 * Criar um dashboard completo em React/Next.js
 
@@ -223,7 +221,7 @@ Adicionar contexto avançado via memória
 
 * Implementar autenticação no front-end e login via Azure AD
 
-#### 📊 Expansão da API
+### 📊 Expansão da API
 
 * Adicionar endpoints de criação e atualização de dados com validação
 
@@ -249,3 +247,13 @@ O **TechNow Data Assistant** demonstra como integrar dados empresariais a um age
 * O Azure AI Foundry
 
 Essa abordagem permite que colaboradores consultem dados complexos usando linguagem natural, sem acesso direto ao banco e com total rastreabilidade.
+
+## 📬 Contato
+
+Você pode me encontrar nas seguintes plataformas:
+
+[![GitHub](https://img.shields.io/badge/GitHub-%23000000.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/brenda-gouveia)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230A66C2.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/brenda-gomes-gouveia)
+[![Email](https://img.shields.io/badge/Email-%23D14836.svg?style=for-the-badge&logo=gmail&logoColor=white)](mailto:brendaggouveia@gmail.com)
+
+---
