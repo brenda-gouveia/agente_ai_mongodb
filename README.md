@@ -257,3 +257,9 @@ Você pode me encontrar nas seguintes plataformas:
 [![Email](https://img.shields.io/badge/Email-%23D14836.svg?style=for-the-badge&logo=gmail&logoColor=white)](mailto:brendaggouveia@gmail.com)
 
 ---
+## Referencias
+* **AI Foundry** https://aka.ms/azureaifoundry
+* **Ngrok** https://ngrok.com/
+* **MongoDB Atlas** https://www.mongodb.com/atlas
+* **FastAPI** https://fastapi.tiangolo.com/
+
