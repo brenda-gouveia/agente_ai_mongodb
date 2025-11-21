@@ -53,18 +53,26 @@ Cada rota retorna um JSON estruturado. Exemplos estão no diretório `/api` do p
 
 ## 📌 4. Expondo localmente a API com Ngrok
 
-Para que o Azure consiga acessar a API local, foi utilizado o **Ngrok**, que gera uma URL pública temporária.
+Para que o Azure consiga acessar a API local, foi utilizado o **Ngrok**, que gera uma URL pública temporária. Para utiliza-lo é necessário criar uma conta no seu site: https://ngrok.com/
 
 ### Passos:
 
-1. Instalar o Ngrok 
-2. Executar:
+1. Instalar o Ngrok
+2. Digitar o seguinte comando no prompt
+   <p align="center">
+<img 
+    src="./assets/2025-11-20 221641.png"
+    width="800"
+/>
+</p>
+
+3. Executar:
 
 ```
 ngrok http 8000
 ```
 
-3. Capturar a URL gerada, exemplo:
+4. Capturar a URL gerada, exemplo:
 
 ```
 https://seu-endereco.ngrok-free.dev
@@ -82,13 +90,20 @@ O Azure AI Foundry **não aceita YAML diretamente**, então a especificação fo
 * `GET /customers`
 * `GET /orders`
 * Schemas de `Product`, `Customer` e `Order`
-* `operationId` únicos para permitir chamada do agente
+  
+<p align="center">
+<img 
+    src="./assets/2025-11-20 215911.png"
+    width="800"
+/>
+</p>  
 
 O arquivo final está disponível em:
 
 ```
 /openapi/openapi.json
 ```
+
 
 ---
 
@@ -111,19 +126,54 @@ Após isso, o agente passa a reconhecer:
 
 E consegue chamar a API automaticamente.
 
+<p align="left">
+<img 
+    src="./assets/2025-11-20 211527.png"
+    width="300"
+/>
+<img 
+    src="./assets/2025-11-20 211619.png"
+    width="400"
+/>
+</p>
+ 
+
 ---
 
 ## 📌 7. Testes no Playground
 
 No **Playground do Azure AI**, o agente foi testado com perguntas como:
 
-* "Liste todos os produtos disponíveis"
 * "Quais clientes estão cadastrados?"
 * "Mostre os pedidos realizados"
 
 O agente identificou automaticamente as ações corretas e fez as chamadas HTTP usando a Action.
 
+<p align="center">
+<img 
+    src="./assets/2025-11-20 212338.png"
+    width="700"
+/>
+</p>
+
+<p align="center">
+<img 
+    src="./assets/2025-11-20 213054.png"
+    width="700"
+/>
+</p>
+
+<p align="center">
+<img 
+    src="./assets/2025-11-20 214043.png"
+    width="700"
+/>
+</p>
+
+Para mais exemplos do agente, clique [aqui](/assets)
+
 ---
+
 ## 9. Próximos Passos (opcionais)
 
 * Adicionar POST /customers e POST /orders
