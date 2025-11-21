@@ -180,65 +180,166 @@ Para mais exemplos do agente, clique [aqui](/assets)
 
 ---
 
-## 8. Melhorias Futuras (opcionais)
+## ✅ 8. Melhorias Futuras (opcionais)
 
-Esta seção apresenta ideias de evolução do projeto, visando aumentar robustez, segurança, usabilidade e escalabilidade.
+A seguir estão evoluções planejadas que poderiam tornar o projeto mais robusto, seguro, eficiente e escalável. Elas não são obrigatórias, mas demonstram caminhos reais de crescimento da solução.
 
 ### 🔒 Segurança e Governança
 
 * Implementar autenticação JWT na API
 
-* Criar níveis de permissão para diferentes tipos de usuários
+* Criar níveis de permissão (admin, leitura, operador)
 
-* Registrar logs de auditoria das ações do agente
+* Registrar logs de auditoria das ações executadas pelo agente
 
-* Configurar rate limits no backend
+* Adicionar rate limits por IP/usuário
 
-* Versão interna para admin com mais permissões
+* Criar versão interna da API (endpoints mais permissivos para admin)
+
+* Implementar CORS mais restritivo
+
+* Sanitização e validação mais rígida de parâmetros de entrada
+
+* Prevenir pipelines perigosos ($out, $merge, $function, etc.)
+
+* Auditoria e rastreamento de consultas feitas pelo agente
 
 ### 🚀 Desempenho e Escalabilidade
 
-* Migrar a API para um ambiente cloud (Azure Web Apps ou Container Apps)
+* Migrar API para cloud (Azure Web Apps ou Container Apps)
 
-* Monitoramento com Application Insights
+* Utilizar containers com CI/CD automatizado
 
-* Cache de respostas para consultas repetidas
+* Configurar monitoramento com Azure Application Insights
 
+* Implementar cache de resultados (Redis) para consultas repetidas
 
-### 🔧 Evolução do Agente IA
+* Adicionar paginação nativa em todos os endpoints
 
-Adicionar contexto avançado via memória
+* Usar índices otimizados no MongoDB (compound, TTL, text, etc.)
 
-* Criar ações mais complexas, como filtros por categoria
+* Versionamento da API (v1, v2…)
 
-* Criar um módulo de "Insights" para resumos automáticos das informações retornadas
+### 🤖 Evolução do Agente IA
+
+* Criar contexto avançado com memória para melhorar consultas
+
+* Adicionar ações complexas (buscas filtradas, recomendações, análises)
+
+* Implementar um módulo de Insights Automáticos (sumários, tendências, estatísticas)
+
+* Criar actions especializadas para análises do tipo “top produtos”, “melhores clientes”, etc.
+
+* Permitir o envio de pipelines com validação segura
+
+* Adicionar detecção de intent (ex.: usuário pede algo que envolve duas coleções → lookup automático)
 
 ### 🖥️ Interface e Experiência do Usuário
 
-* Criar um dashboard completo em React/Next.js
+* Desenvolver dashboard em React ou Next.js
 
-* Adicionar componentes visuais (gráficos, tabelas dinâmicas)
+* Criar visualizações (gráficos, tabelas interativas, cards de métricas)
 
-* Implementar autenticação no front-end e login via Azure AD
+* Implementar autenticação no front-end (Azure AD, OAuth ou JWT)
+
+* Criar home com estatísticas gerais do banco
+
+* Interface para execução manual das consultas do agente
+
+* Criar fluxo CRUD completo pelo front-end
 
 ### 📊 Expansão da API
 
-* Adicionar endpoints de criação e atualização de dados com validação
+* Adicionar endpoints de criação e atualização com validação
 
-* Criar endpoint para detalhes individuais: /products/{id}, /customers/{id}, /orders/{id}
+* Criar endpoints individuais:
+  * /products/{id}
+  * /customers/{id}
+  * /orders/{id}
 
-* Adicionar paginação, ordenação e filtros nativos
+* Implementar paginação, ordenação e filtros nativos
 
 * Adicionar POST /customers e POST /orders
 
-* Criar interface web (React, Next.js ou Streamlit)
+* Criar endpoint seguro para executar pipelines pré-validadas
 
-* Criar autenticação por token na API
+* Criar endpoints administrativos para manutenção do banco
 
-* Versão interna para admin com mais permissões
+* Melhorar padronização de erros (HTTPException + JSON estruturado)
 ---
+## 🧩 9. Limitações Atuais (transparência técnica)
 
-## 📌 9. Conclusão
+Esta seção descreve limitações conhecidas do projeto atual. Elas não impedem o funcionamento, mas indicam pontos a serem evoluídos futuramente.
+
+### 📌 1. Endpoints retornam coleções inteiras
+Atualmente, os endpoints /products, /customers e /orders retornam todos os documentos.
+Isso causa limitações:
+
+* maior consumo de rede
+
+* o agente precisa analisar tudo manualmente
+
+* consultas como “top 5 marcas” ficam mais lentas
+
+* sem paginação e sem filtros
+
+### 📌 2. Falta de validação robusta de entrada (sem Pydantic)
+
+Sem Pydantic, a API não valida:
+
+* tipos de dados
+
+* formatos inválidos
+
+* parâmetros faltando
+
+Isso torna a API funcional, porém menos segura.
+
+### 📌 3. O Agente está limitado a dados brutos
+
+Por só possuir endpoints de leitura simples:
+
+* não consegue executar agregações reais
+
+* não consegue fazer cálculos complexos direto do banco
+
+* precisa inferir o resultado analisando JSON
+
+* consultas que exigem GROUP BY ou JOIN são restritas
+
+### 📌 4. Ausência de autenticação e controle de acesso
+
+A API está aberta (por simplicidade).
+Isso é comum em trabalhos acadêmicos, mas não ideal para produção.
+
+### 📌 5. Falta de paginação, ordenação e filtros nativos
+
+Sem esses recursos:
+
+* cargas muito grandes podem reduzir performance
+
+* processamento fica no lado do cliente ou do agente
+
+### 📌 6. Sem camada de cache ou otimizações de banco
+
+O MongoDB está sendo usado de forma básica:
+
+* sem índices específicos
+
+* sem cache
+
+* sem análise de plano de consulta
+
+### 📌 7. O Agente não possui contexto persistente
+
+O agente é estateless, então:
+
+* não lembra interações anteriores
+
+* não pode manter estado de navegação
+
+---
+## 📌 10. Conclusão
 
 O **TechNow Data Assistant** demonstra como integrar dados empresariais a um agente IA usando apenas:
 
