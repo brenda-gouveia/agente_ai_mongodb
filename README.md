@@ -180,7 +180,7 @@ Para mais exemplos do agente, clique [aqui](/assets)
 
 ---
 
-## 9. Melhorias Futuras (opcionais)
+## 8. Melhorias Futuras (opcionais)
 
 Esta seção apresenta ideias de evolução do projeto, visando aumentar robustez, segurança, usabilidade e escalabilidade.
 
@@ -238,7 +238,7 @@ Adicionar contexto avançado via memória
 * Versão interna para admin com mais permissões
 ---
 
-## 📌 10. Conclusão
+## 📌 9. Conclusão
 
 O **TechNow Data Assistant** demonstra como integrar dados empresariais a um agente IA usando apenas:
 
